@@ -302,7 +302,7 @@ if(SNAPPY_BUILD_TESTS OR SNAPPY_BUILD_BENCHMARKS)
     set_target_properties(snappy_test_support PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
   endif(BUILD_SHARED_LIBS)
 
-  target_link_libraries(snappy_test_support snappy)
+  target_link_libraries(snappy_unittest snappy_test_support gtest_main gtest)
 
   if(HAVE_LIBZ)
     target_link_libraries(snappy_test_support z)
